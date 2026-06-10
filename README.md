@@ -274,6 +274,14 @@ Identity, marketplace, and services platform for AI agents on Base L2. Productio
 
 ### Verification & Identity
 
+**[invinoveritas](https://api.babyblueviper.com)** — _Production judgment validator: signed verdicts on agent actions with a public, outcome-linked track record_
+
+- [Public verdict ledger](https://api.babyblueviper.com/ledger) — every `/review` verdict is signed and published BEFORE its outcome settles; entries carry a `commitment_proof` (relay-publication timestamp anchoring) and link to on-chain-checkable trade outcomes — wins and losses both. Live dogfood: the operators' own Bitcoin bot passes every entry through the same gate.
+- `/review` — independent pre-action verdict (approve / approve_with_concerns / reject) on a proposed trade, command, code diff, or plan. Pay per call via L402 (Lightning), x402 (USDC on Base), or card.
+- `/verify-proof` — free, no-auth verification of any presented verdict proof (portable, self-describing, schnorr against the published key).
+- Spec work: the [ERC-8274 attestation/judgment worked example](https://ethereum-magicians.org/t/28083) (the concrete spec proposal for the `attestation/judgment` claimType) and validator-semantics input on [ERC-8004](https://ethereum-magicians.org/t/25098); credited in the WYRIWE spec acknowledgements as "production judgment validator operator".
+- GitHub: [babyblueviper1/invinoveritas](https://github.com/babyblueviper1/invinoveritas) · MCP endpoint: `https://api.babyblueviper.com/mcp`
+
 **[ORIGIN Protocol](https://origindao.ai)** — _Proof of Agency: Cognitive verification for AI agents_
 
 - [ORIGIN Registry (Base Mainnet)](https://basescan.org/address/0xac62E9d0bE9b88674f7adf38821F6e8BAA0e59b0) - ERC-8004 compatible soulbound Birth Certificate registry
